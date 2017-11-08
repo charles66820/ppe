@@ -1,0 +1,45 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th div{
+  text-align: center;
+}
+td {
+  padding: 5px;
+  text-align: left;
+}
+thead, tfoot{
+  cursor: pointer;
+}
+.fel{
+  -ms-transform: rotate(90deg); /* IE 9 */
+  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+  transform: rotate(90deg);
+  display: inline-block;
+  right: -6px;
+  position: relative;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+@media screen and (min-width: 777px) {
+  th{
+    width: 200px;
+    padding: 5px;
+  }
+  table{
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 777px) {
+  th{
+    min-width: 80px;
+    max-width: 120px;
+    padding: 5px;
+  }
+  table{
+    min-height: 20px;
+  }
+}
