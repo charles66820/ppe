@@ -1,7 +1,6 @@
 <?php
 // A few settings
-$image = 'cricci.jpg';
-
+$image = 'uri.png';
 // Read image path, convert to base64 encoding
 $imageData = base64_encode(file_get_contents($image));
 
