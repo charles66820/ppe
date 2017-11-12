@@ -3,6 +3,7 @@ div#slider {
   width: 80%;
   max-width: 1000px;
   overflow: hidden;
+  margin: auto;
 }
 
 div#slider figure{
