@@ -33,3 +33,9 @@ div#slider figure img {
    95% { left: -300%; }
    100% { left: -400%; }
  }
+
+ /* style texte */
+
+h1 {
+  background-color: #D9D9D9;
+}
