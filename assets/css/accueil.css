@@ -43,6 +43,6 @@ h1.titre {
 }
 
 p.texte {
-  font-size: 1,5em; /*<-- ne fonctionne pa a cause de la virgule il faut un . mais il y a un soussi avec 1.5em*/
+  font-size: 1em; 
   font-family: verdana;
 }
