@@ -1,3 +1,4 @@
+/*css globale*/
 body{
   margin-top: 88px;
   margin-bottom: 0px;
@@ -6,6 +7,7 @@ body{
   padding: 0px;
   background-color: #eee;
 }
+/* css qui gére le menu*/
 header{
   height: 60px;
   width: 100%;
@@ -43,6 +45,7 @@ header{
   background-color: rgb(30, 30, 30);
   border-bottom-color: rgb(0, 150, 255);
 }
+/*css qui gére le menu sur les mobile*/
 #m-nav-menu{
   height: 100%;
   width: 100%;
@@ -66,6 +69,7 @@ header{
 #m-nav-menu a:hover{
   background-color: rgb(30, 30, 30);
 }
+/*boutton du menu mobile*/
 #m-btn-t{
   width: 56px;
   height: 56px;
@@ -111,6 +115,7 @@ header{
 #m-btn:target #m-nav-menu{
   display: inherit;
 }
+/*contenu de la page*/
 article {
   margin: 30px auto;
   display: block;
@@ -123,6 +128,7 @@ footer{
   background-color: #2A2A2A;
   bottom: 0px;
 }
+/*css pour sadapeté a l'écrant (mobile)*/
 @media screen and (min-width: 777px) {
   #li {
     display: flex;

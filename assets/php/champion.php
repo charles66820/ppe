@@ -25,7 +25,7 @@ if (!$conn){
 
   //ordre
   if (isset($_GET["colonne"])) {
-    if ($colonne == "edition") {
+    if ($colonne == "edition") {//edition pour le cas spésifique de l'année aprée le pays où a lieu les jeux
       if ($ordre) {
         $sql = "SELECT * FROM champions ORDER BY SUBSTR(edition, -4) ASC LIMIT 10 OFFSET $limit";
       }else {
@@ -40,7 +40,7 @@ if (!$conn){
     }
   }
 
-  //sql
+  //lecture de la taple est création du tableau
   $result = mysqli_query($conn, $sql);
   while ($row = mysqli_fetch_assoc($result)){
     echo '<tr>
