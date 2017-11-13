@@ -1,9 +1,8 @@
 <?php
 // connection a la base d donnée
+$conn = mysqli_connect('localhost', 'root', '', 'webdata');
 
-if (!$conn = mysqli_connect('localhost', 'root', '', 'webdata')){
-  $conn = mysqli_connect('localhost', 'root', '', 'webdata', '8080');
-}else if (!$conn){
+if (!$conn){
   die("connection à la db a échouer : ".mysqli_connect_error());
 }else {
 
