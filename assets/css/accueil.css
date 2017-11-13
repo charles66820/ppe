@@ -36,6 +36,13 @@ div#slider figure img {
 
  /* style texte */
 
-h1 {
+h1#titre1 {
   background-color: #D9D9D9;
+  color: #152757;
+  font-family: verdana;
+}
+
+p#texte {
+  font-size: 1,5em;
+  font-family: verdana;
 }
