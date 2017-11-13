@@ -3,6 +3,8 @@
 $conn = mysqli_connect('localhost', 'root', '', 'webdata');
 
 if (!$conn){
+  $conn = mysqli_connect('localhost:8080', 'root', '', 'webdata');
+}else if (!$conn){
   die("connection à la db a échouer : ".mysqli_connect_error());
 }else {
 
