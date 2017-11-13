@@ -36,13 +36,13 @@ div#slider figure img {
 
  /* style texte */
 
-h1#titre1 {
+h1.titre {
   background-color: #D9D9D9;
   color: #003466;
   font-family: verdana;
 }
 
-p#texte {
-  font-size: 1,5em;
+p.texte {
+  font-size: 1,5em; /*<-- ne fonctionne pa a cause de la virgule il faut un . mais il y a un soussi avec 1.5em*/
   font-family: verdana;
 }
