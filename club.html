@@ -10,6 +10,7 @@
   </head>
   <body>
     <header>
+	<!-- menu -->
         <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
         <div id="li">
           <a href="./">Acceuil</a>
@@ -18,16 +19,19 @@
           <a href="club.html" style="border-bottom-color: rgb(0, 150, 255);">Club</a>
         </div>
       <div id="m-btn">
+	<!-- boutton pour ouvrir le menu -->
         <div id="m-btn-t">
           <a id="line" href="#m-btn" >
             <div class="line" style="left: 8px;"><div class="line"><div class="line"></div></div></div>
           </a>
+	  <!-- boutton pour fermmer le menu -->
           <a id="crois" href="#m-btn-t">
             <div class="crois" style="transform: rotate(45deg);"></div>
             <div class="crois" style="transform: rotate(-45deg);"></div>
           </a>
         </div>
-        <div id="m-nav-menu">
+        <!-- menu pour les mobile -->
+	<div id="m-nav-menu">
           <a href="./">Acceuil</a>
           <a href="regles.html">Régles</a>
           <a href="champion.html">Champion</a>
@@ -69,6 +73,7 @@
     </article>
     <footer><a href="connection.php">connection</a></footer>
     <script>
+    //script pour ne pas scroll la page dans le menu mobile
     document.getElementById('line').onclick = function() {
         document.body.style.overflow = "hidden";
     }
