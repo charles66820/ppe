@@ -9,3 +9,22 @@ p {
   font-size: 1em;
   font-family: verdana;
 }
+
+/* aligner une img a un texte */
+.float {
+  float: right;
+  width: 30%;
+  height: 30%;
+}
+
+.floag {
+  float: left;
+  width: 30%;
+  height: 30%,
+}
+
+
+/* img {
+  width: 40%;
+  height: 40%;
+}

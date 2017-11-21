@@ -10,6 +10,7 @@
   </head>
   <body>
     <header>
+	<!-- menu -->
         <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
         <div id="li">
           <a href="./">Acceuil</a>
@@ -19,14 +20,17 @@
         </div>
       <div id="m-btn">
         <div id="m-btn-t">
+	  <!-- boutton pour ouvrir le menu -->
           <a id="line" href="#m-btn" >
             <div class="line" style="left: 8px;"><div class="line"><div class="line"></div></div></div>
           </a>
+	  <!-- boutton pour fermmer le menu -->
           <a id="crois" href="#m-btn-t">
             <div class="crois" style="transform: rotate(45deg);"></div>
             <div class="crois" style="transform: rotate(-45deg);"></div>
           </a>
         </div>
+	<!-- menu pour les mobile -->
         <div id="m-nav-menu">
           <a href="./">Acceuil</a>
           <a href="regles.html">Régles</a>
@@ -39,6 +43,7 @@
         <div class="">
           <h2 class="titre"> Les armes </h2>
           <p>
+            <img class="float" src="assets\img\Règle\les_armes.jpg" alt="">
             L'escrime sportive contemporaine utilise trois armes différentes : le fleuret, l'épée et le sabre. Cette escrime aux trois armes s'est constituée à la fin du XIXe siècle.
             Toutes ces armes sont présentes aux compétitions de niveau olympique (le sabre féminin a débuté aux Jeux olympiques d'Athènes en 2004).
             La lame de l'arme adulte est par convention dite lame no 5. Pour les enfants, le poids et la taille de l'arme sont adaptés. Les poussins et pupilles utilisent une lame no 0 de 77 cm,
@@ -52,6 +57,7 @@
         <div class="">
           <h2 class="titre"> La piste </h2>
           <p>
+            <img class="float" src="assets\img\Règle\piste_escrime.png" alt="">
             Une piste d'escrime mesure 14 mètres de long sur 1,5 à 2 mètres de large. Elle est marquée par des lignes perpendiculaires en divers endroits (centre de la piste, ligne de mise en garde,
             et limite arrière, outre les 2 derniers mètres doivent être clairement identifiés). Si un tireur sort par l'un des bords latéraux de la piste, l'action est interrompue et les tireurs se
             remettent en garde en ayant néanmoins fait avancer d'un mètre l'adversaire du tireur qui est sorti; ce dernier devant donc reculer et se remettre à distance. Si un tireur sort des deux pieds
@@ -62,6 +68,7 @@
         <div class="">
           <h2 class="titre"> Le fleuret </h2>
           <p>
+            <img class="float" src="assets\img\Règle\zone_fleuret.svg.png" alt="">
             L'aire de touche au fleuret est restreinte, c'est un héritage du temps où les équipements de sécurité étaient limités. Les coups au visage étant auparavant dangereux faute de masque, la tête n'est pas
              une cible valide. L'aire fut réduite au tronc seul, zone où les coups portés seraient potentiellement les plus dangereux si les armes n'étaient pas, fort heureusement, neutralisées. Au fleuret,
              comme au sabre, il est strictement interdit de "substituer"2 une surface valable (tronc) par une surface non valable (ex. bras ou tête).
@@ -81,6 +88,7 @@
         <div class="">
           <h2 class="titre"> Le sabre </h2>
           <p>
+            <img class="float" src="assets\img\Règle\zone_sabre.jpg" alt="">
             Le sabre est une arme d'estoc, de taille6 (coup porté avec le tranchant de la lame) et de contre-taille (coup porté avec le dos de la lame); les coups du plat de la lame sont aussi valable.
             C'est une arme conventionnelle comme le fleuret6 : le sabre répond aux mêmes règles d'engagement (conventions) que le fleuret, donnant la priorité à l'attaquant, et de même légèreté — 500 g pour une
             longueur totale de 105 cm maximum7. En cas de touches simultanées, l'arbitre décide d'accorder la priorité à un des tireurs, ou à aucun des deux. Cette priorité dépend de la « phrase d'arme » et des
@@ -96,6 +104,7 @@
         <div class="">
           <h2 class="titre"> L'Epée </h2>
           <p>
+            <img class="float" src="assets\img\Règle\zone_epee.png" alt="">
             L'épée moderne a été inventée au XIXe siècle afin de se battre en duel. C'est une arme d'estoc uniquement. Dans les siècles précédents, on utilisa à partir du XVIe siècle : la rapière. La rapière a
             d'abord évolué en épée de cour sous Louis XIV.
             Assaut d'épée aux Championnats d'Europe d'escrime 2007
@@ -110,6 +119,7 @@
     </article>
     <footer><a href="connection.php">connection</a></footer>
     <script>
+    //script pour ne pas scroll la page dans le menu mobile
     document.getElementById('line').onclick = function() {
         document.body.style.overflow = "hidden";
     }
