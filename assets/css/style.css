@@ -24,6 +24,7 @@ header{
   position: absolute;
 }
 #li {
+  list-style-type: none;
   position: absolute;
   left: 170px;
 }
@@ -54,12 +55,12 @@ header{
   z-index: 2;
   overflow: auto;
   display: none;
+  background-color: #2A2A2A;
 }
 #m-nav-menu a{
   width: 100%;
   text-align: center;
   padding: 18px 0px 18px 0px;
-  background-color: #2A2A2A;
   text-overflow: ellipsis;
   overflow: hidden;
   cursor: pointer;
