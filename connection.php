@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Inscription</title>
+  </head>
+  <body>
+    
 <?php
 if (isset($_)) {
   echo "connecté";
@@ -10,14 +18,5 @@ if (isset($_)) {
   </form>';
 }
 ?>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Inscription</title>
-  </head>
-  <body>
-
   </body>
 </html>
