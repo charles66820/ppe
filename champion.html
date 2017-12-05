@@ -10,36 +10,37 @@
   </head>
   <body>
     <header>
-	<!-- menu -->
-        <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
-        <div id="li">
-          <a href="./">Acceuil</a>
-          <a href="regles.html">Régles</a>
-          <a href="champion.html" style="border-bottom-color: rgb(0, 150, 255);">Champion</a>
-          <a href="club.html">Club</a>
-        </div>
+      <!-- menu -->
+      <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
+      <nav id="li">
+        <a href="./">Acceuil</a>
+        <a href="regles.html">Régles</a>
+        <a href="champion.html" style="border-bottom-color: rgb(0, 150, 255);">Champion</a>
+        <a href="club.html">Club</a>
+      </nav>
       <div id="m-btn">
         <div id="m-btn-t">
-	  <!-- boutton pour ouvrir le menu -->
+          <!-- boutton pour ouvrir le menu -->
           <a id="line" href="#m-btn" >
             <div class="line" style="left: 8px;"><div class="line"><div class="line"></div></div></div>
           </a>
-	  <!-- boutton pour fermmer le menu -->
+          <!-- boutton pour fermmer le menu -->
           <a id="crois" href="#m-btn-t">
             <div class="crois" style="transform: rotate(45deg);"></div>
             <div class="crois" style="transform: rotate(-45deg);"></div>
           </a>
         </div>
-	<!-- menu pour les mobile -->
-        <div id="m-nav-menu">
+        <!-- menu pour les mobile -->
+        <nav id="m-nav-menu">
           <a href="./">Acceuil</a>
           <a href="regles.html">Régles</a>
           <a href="champion.html">Champion</a>
           <a href="club.html">Club</a>
-	       </div>
-       </div>
+        </nav>
+      </div>
     </header>
     <article>
+      <h1>Liste des médaillés olympiques en escrime :</h1>
       <!-- tableau des champion -->
       <table>
         <thead>
@@ -61,13 +62,13 @@
     <script src="assets/js/jquery-3.2.1.min.js"></script>
     <script src="assets/js/champion.js"></script>
     <script>
-    //script pour ne pas scroll la page dans le menu mobile
-    document.getElementById('line').onclick = function() {
+      //script pour ne pas scroll la page dans le menu mobile
+      document.getElementById('line').onclick = function() {
         document.body.style.overflow = "hidden";
-    }
-    document.getElementById('crois').onclick = function() {
+      }
+      document.getElementById('crois').onclick = function() {
         document.body.style.overflow = "inherit";
-    }
+      }
     </script>
   </body>
 </html>
