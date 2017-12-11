@@ -13,11 +13,51 @@ if (isset($_)) {
 
 <!DOCTYPE html>
 <html>
+<!DOCTYPE html>
+<html>
   <head>
+    <link rel="icon" href="assets/img/icon.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Inscription</title>
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/accueil.css">
   </head>
   <body>
+    <header>
+      <!-- menu -->
+      <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
+      <nav id="li">
+        <a href="./">Acceuil</a>
+        <a href="regles.html">Régles</a>
+        <a href="champion.html">Champion</a>
+        <a href="club.html">Club</a>
+      </nav>
+      <div id="m-btn">
+        <div id="m-btn-t">
+          <!-- boutton pour ouvrir le menu -->
+          <a id="line" href="#m-btn" >
+            <div class="line" style="left: 8px;"><div class="line"><div class="line"></div></div></div>
+          </a>
+          <!-- boutton pour fermmer le menu -->
+          <a id="crois" href="#m-btn-t">
+            <div class="crois" style="transform: rotate(45deg);"></div>
+            <div class="crois" style="transform: rotate(-45deg);"></div>
+          </a>
+        </div>
+        <!-- menu pour les mobile -->
+        <nav id="m-nav-menu">
+          <a href="./">Acceuil</a>
+          <a href="regles.html">Régles</a>
+          <a href="champion.html">Champion</a>
+          <a href="club.html">Club</a>
+        </nav>
+      </div>
+    </header>
+  <article>
+    <meta charset="utf-8">
+    <title>Inscription</title>
   <!-- formulaire d'Inscription -->
     <div align="center">
         <h2>Inscription</h2>
@@ -49,6 +89,5 @@ if (isset($_)) {
           </tr>
         </table>
     </div>
-
-    </body>
+  </article>
 </html>
