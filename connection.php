@@ -54,11 +54,9 @@ if (isset($_)) {
         </nav>
       </div>
     </header>
-  <head>
+  <article>
     <meta charset="utf-8">
     <title>Inscription</title>
-  </head>
-  <body>
   <!-- formulaire d'Inscription -->
     <div align="center">
         <h2>Inscription</h2>
@@ -90,6 +88,5 @@ if (isset($_)) {
           </tr>
         </table>
     </div>
-
-    </body>
+  </article>
 </html>
