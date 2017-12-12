@@ -42,7 +42,7 @@
     <article>
 
 <?php
-if (isset($_)) {
+if (isset($_SESSSION)) {
   echo "connecté";
 }else {
   echo '
@@ -56,7 +56,7 @@ if (isset($_)) {
                 <label for="pseudo">Pseudo :</label>
               </td>
               <td>
-                <input type="text" placeholder="Entrez votre pseudo" name="pseudo" >
+                <input type="text" placeholder="Entrez votre pseudo" name="pseudo" id="pseudo" >
               </td>
             </tr>
             <tr>
@@ -64,18 +64,28 @@ if (isset($_)) {
                 <label for="mail">Mail :</label>
               </td>
               <td>
-                <input type="email" placeholder="Entrez votre mail" name="mail" >
+                <input type="email" placeholder="Entrez votre mail" name="mail" id="mail">
               </td>
             </tr>
             <tr>
               <td align="right">
-                <label for="mail">Confirmez votre mail :</label>
+                <label for="mdp">Mot de passe :</label>
               </td>
               <td>
-                <input type="email" placeholder="Confirmez votre mail" name="mail" >
+                <input type="password" placeholder="Mot de passe" name="mdp" id="mdp">
+              </td>
+            </tr>
+            <tr>
+              <td align="right">
+                <label for="mdp2">Confirmez votre mot de passe :</label>
+              </td>
+              <td>
+                <input type="password" placeholder="confirmez votre mot de passe" name="mdp2" id="mdp2">
               </td>
             </tr>
           </table>
+          <br>
+          <input type="submit" value="Valider" >
         </div>';
 }
 ?>
