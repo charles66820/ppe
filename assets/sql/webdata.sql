@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `webdata`
 --
-
+CREATE DATABASE IF NOT EXISTS `webdata` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `webdata`;
 -- --------------------------------------------------------
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `champions` (
   `edition` varchar(100) CHARACTER SET latin1 NOT NULL,
   `type` varchar(100) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=390 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=390 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Déchargement des données de la table `champions`
