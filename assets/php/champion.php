@@ -15,7 +15,7 @@ if (!$conn){
   if (isset($_GET["colonne"])){
     $colonne = $_GET["colonne"];//string
   }else {
-    $sql = "SELECT * FROM champions LIMIT 10 OFFSET $limit";
+    $sql = "SELECT * FROM champions LIMIT 20 OFFSET $limit";
   }
   if (isset($_GET["ordre"])) {
     $ordre = $_GET["ordre"];//boolean
@@ -27,15 +27,15 @@ if (!$conn){
   if (isset($_GET["colonne"])) {
     if ($colonne == "edition") {//edition pour le cas spésifique de l'année aprée le pays où a lieu les jeux
       if ($ordre) {
-        $sql = "SELECT * FROM champions ORDER BY SUBSTR(edition, -4) ASC LIMIT 10 OFFSET $limit";
+        $sql = "SELECT * FROM champions ORDER BY SUBSTR(edition, -4) ASC LIMIT 20 OFFSET $limit";
       }else {
-        $sql = "SELECT * FROM champions ORDER BY SUBSTR(edition, -4) DESC LIMIT 10 OFFSET $limit";
+        $sql = "SELECT * FROM champions ORDER BY SUBSTR(edition, -4) DESC LIMIT 20 OFFSET $limit";
       }
     }else {
       if ($ordre) {
-        $sql = "SELECT * FROM champions ORDER BY $colonne ASC LIMIT 10 OFFSET $limit";
+        $sql = "SELECT * FROM champions ORDER BY $colonne ASC LIMIT 20 OFFSET $limit";
       }else {
-        $sql = "SELECT * FROM champions ORDER BY $colonne DESC LIMIT 10 OFFSET $limit";
+        $sql = "SELECT * FROM champions ORDER BY $colonne DESC LIMIT 20 OFFSET $limit";
       }
     }
   }

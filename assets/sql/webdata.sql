@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 13 nov. 2017 à 07:17
+-- Généré le :  mer. 13 déc. 2017 à 19:43
 -- Version du serveur :  5.7.19
 -- Version de PHP :  5.6.31
 
@@ -32,11 +32,11 @@ USE `webdata`;
 DROP TABLE IF EXISTS `champions`;
 CREATE TABLE IF NOT EXISTS `champions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nom` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `nationaliter` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `titre` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `edition` varchar(100) CHARACTER SET latin1 NOT NULL,
-  `type` varchar(100) CHARACTER SET latin1 NOT NULL,
+  `nom` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `nationaliter` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `titre` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `edition` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `type` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=390 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -45,12 +45,12 @@ CREATE TABLE IF NOT EXISTS `champions` (
 --
 
 INSERT INTO `champions` (`id`, `nom`, `nationaliter`, `titre`, `edition`, `type`) VALUES
-(36, 'Marcel Boulenger', 'France', 'Bronze', 'Paris 1900', 'Fleuret masculin individuel'),
-(35, 'Henri Masson', 'France', 'Argent', 'Paris 1900', 'Fleuret masculin individuel'),
-(34, 'Ã‰mile Coste', 'France', 'Or', 'Paris 1900', 'Fleuret masculin individuel'),
-(33, 'PeriklÃ­s PierrÃ¡kos-MavromichÃ¡lis', 'GrÃ¨ce', 'Bronze', 'AthÃ¨nes 1896', 'Fleuret masculin individuel'),
-(32, 'Henri Callot', 'France', 'Argent', 'AthÃ¨nes 1896', 'Fleuret masculin individuel'),
 (31, 'EugÃ¨ne-Henri Gravelotte', 'France', 'Or', 'AthÃ¨nes 1896', 'Fleuret masculin individuel'),
+(32, 'Henri Callot', 'France', 'Argent', 'AthÃ¨nes 1896', 'Fleuret masculin individuel'),
+(33, 'PeriklÃ­s PierrÃ¡kos-MavromichÃ¡lis', 'GrÃ¨ce', 'Bronze', 'AthÃ¨nes 1896', 'Fleuret masculin individuel'),
+(34, 'Ã‰mile Coste', 'France', 'Or', 'Paris 1900', 'Fleuret masculin individuel'),
+(35, 'Henri Masson', 'France', 'Argent', 'Paris 1900', 'Fleuret masculin individuel'),
+(36, 'Marcel Boulenger', 'France', 'Bronze', 'Paris 1900', 'Fleuret masculin individuel'),
 (37, 'RamÃ³n Fonst', 'Cuba', 'Or', 'Saint Louis 1904', 'Fleuret masculin individuel'),
 (38, 'Albertson Van Zo Post ', 'Cuba', 'Argent', 'Saint Louis 1904', 'Fleuret masculin individuel'),
 (39, 'Charles Tatham', 'Cuba', 'Bronze', 'Saint Louis 1904', 'Fleuret masculin individuel'),
@@ -404,6 +404,44 @@ INSERT INTO `champions` (`id`, `nom`, `nationaliter`, `titre`, `edition`, `type`
 (387, 'Yana Egorian', 'Russie', 'Or', 'Rio 2016', 'Sabre fÃ©minin individuel'),
 (388, 'Sofia Velikaya', 'Russie', 'Argent', 'Rio 2016', 'Sabre fÃ©minin individuel'),
 (389, 'Olha Kharlan', 'Ukraine', 'Bronze', 'Rio 2016', 'Sabre fÃ©minin individuel');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `connexion`
+--
+
+DROP TABLE IF EXISTS `connexion`;
+CREATE TABLE IF NOT EXISTS `connexion` (
+  `connid` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) NOT NULL,
+  `addrip` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `cdate` datetime NOT NULL,
+  PRIMARY KEY (`connid`),
+  KEY `fk_connexion_users` (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE IF NOT EXISTS `users` (
+  `uid` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `pwd` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `mail` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`uid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`uid`, `nom`, `pwd`, `mail`) VALUES
+(1, 'toto', '1234', 'exemple@site.fr');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
