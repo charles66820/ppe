@@ -42,7 +42,10 @@
     <article>
 
 <?php
-if (isset($_SESSSION)) {
+session_start();
+
+//test si l'organisateur est connectée ou non
+if (isset($_SESSION['uid'])) {
   echo "connecté";
 }else {
   echo '

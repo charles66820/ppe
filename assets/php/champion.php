@@ -1,10 +1,11 @@
 <?php
 // connection a la base d donnée
-$conn = mysqli_connect('localhost', 'root', '', 'webdata');
+include 'sql_settings.php';
 
+//test si la connexion fonctionne
 if (!$conn){
   die("connection à la db a échouer : ".mysqli_connect_error());
-}else {
+} else {
 
   //variable
   if (isset($_GET["limit"])) {
