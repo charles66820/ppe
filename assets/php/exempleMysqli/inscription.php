@@ -5,12 +5,12 @@ session_start();
 if (isset($_SESSION['uid'])) {
 
   // connection a la base d donnée
-  include 'sql_settings.php';
+  include '../sql_settings.php';
 
   //test si la connexion fonctionne
   if (!$conn){
     die("connection à la db a échouer : ".mysqli_connect_error());
-    
+
   } else {
 
     //ajout de l'utilisateur dans la base de donnée

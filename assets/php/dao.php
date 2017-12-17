@@ -1,6 +1,6 @@
 <?php
  // début classe //
-class membreDAO {
+class membreDAO { //pourquoi une class?
   private $chainedeConnexion;
   private $utilisateur;
   private $motdepasse;

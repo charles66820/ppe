@@ -2,7 +2,7 @@
 session_start();
 
 // connection a la base d donnée
-include 'sql_settings.php';
+include '../sql_settings.php';
 
 //test si la connexion fonctionne
 if (!$conn){
