@@ -17,6 +17,7 @@
         <a href="regles.html" style="border-bottom-color: rgb(0, 150, 255);">Régles</a>
         <a href="champion.html">Champion</a>
         <a href="club.html">Club</a>
+        <a id="connexion" href="connection.php">Connexion</a>
       </nav>
       <div id="m-btn">
         <div id="m-btn-t">
@@ -39,9 +40,18 @@
         </nav>
       </div>
     </header>
+    <!-- <nav id="menu">
+      <ul>
+        <li><a href="#armes" title="Armes"> Les armes </a></li>
+        <li><a href="#piste" title="Piste"> La Piste </a></li>
+        <li><a href="#fleuret" title="fleuret"> Le fleuret </a></li>
+        <li><a href="#sabre" title="sabre"> Le sabre </a></li>
+        <li><a href="#epee" title="L'Epée"> L'Epée </a></li>
+      </ul>
+    </nav> -->
     <article>
       <div class="">
-        <h2 class="titre"> Les armes </h2>
+        <h2 class="titre" id="armes"> Les armes </h2>
         <p>
           <img class="float" src="assets\img\Règle\les_armes.jpg" alt="">
             L'escrime sportive contemporaine utilise trois armes différentes : le fleuret, l'épée et le sabre. Cette escrime aux trois armes s'est constituée à la fin du XIXe siècle.
@@ -53,9 +63,9 @@
             vestimentaires, comme la cape, ou divers tel qu'une lampe.
         </p>
       </div>
-
+      <br>
       <div class="">
-        <h2 class="titre"> La piste </h2>
+        <h2 class="titre" id="piste"> La piste </h2>
         <p>
           <img class="float" src="assets\img\Règle\piste_escrime.png" alt="">
             Une piste d'escrime mesure 14 mètres de long sur 1,5 à 2 mètres de large. Elle est marquée par des lignes perpendiculaires en divers endroits (centre de la piste, ligne de mise en garde,
@@ -64,9 +74,9 @@
             par le bout arrière de la piste, il est considéré comme touché.
         </p>
       </div>
-
+      <br>
       <div class="">
-        <h2 class="titre"> Le fleuret </h2>
+        <h2 class="titre" id="fleuret"> Le fleuret </h2>
         <p>
           <img class="float" src="assets\img\Règle\zone_fleuret.svg.png" alt="">
             L'aire de touche au fleuret est restreinte, c'est un héritage du temps où les équipements de sécurité étaient limités. Les coups au visage étant auparavant dangereux faute de masque, la tête n'est pas
@@ -84,9 +94,9 @@
              non valable).
         </p>
       </div>
-
+      <br>
       <div class="">
-        <h2 class="titre"> Le sabre </h2>
+        <h2 class="titre" id="sabre"> Le sabre </h2>
         <p>
           <img class="float" src="assets\img\Règle\zone_sabre.jpg" alt="">
             Le sabre est une arme d'estoc, de taille6 (coup porté avec le tranchant de la lame) et de contre-taille (coup porté avec le dos de la lame); les coups du plat de la lame sont aussi valable.
@@ -100,9 +110,9 @@
             les combats très rapides.
         </p>
       </div>
-
+      <br>
       <div class="">
-        <h2 class="titre"> L'Epée </h2>
+        <h2 class="titre" id="epee"> L'Epée </h2>
         <p>
           <img class="float" src="assets\img\Règle\zone_epee.png" alt="">
             L'épée moderne a été inventée au XIXe siècle afin de se battre en duel. C'est une arme d'estoc uniquement. Dans les siècles précédents, on utilisa à partir du XVIe siècle : la rapière. La rapière a
@@ -118,7 +128,7 @@
       </div>
 
     </article>
-    <footer><a href="connection.php">connexion</a></footer>
+    <footer></footer>
     <script>
     //script pour ne pas scroll la page dans le menu mobile
     document.getElementById('line').onclick = function() {

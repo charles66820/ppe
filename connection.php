@@ -17,6 +17,7 @@
         <a href="regles.html">Régles</a>
         <a href="champion.html">Champion</a>
         <a href="club.html">Club</a>
+        <a id="connexion" href="connection.php" style="border-bottom-color: rgb(0, 150, 255);">Connexion</a>
       </nav>
       <div id="m-btn">
         <div id="m-btn-t">
