@@ -30,8 +30,8 @@ p {
 }
 
 /* Menu nav */
-
-/* #menu{
+@media screen and (min-width: 777px) {
+#menu{
   z-index: 2;
   display: table;
   position: fixed;
@@ -49,4 +49,5 @@ p {
 
 #menu li{
   color: white;
-} */
+}
+}
