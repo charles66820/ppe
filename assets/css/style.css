@@ -26,7 +26,7 @@ header{
 }
 #li {
   list-style-type: none;
-  position: absolute;
+  position: relative;
   margin: auto 170px;
   min-width: 10px;
 }
@@ -52,8 +52,16 @@ header{
 /* bouton connexion */
  #connexion {
    list-style-type: none;
-   position: relative ;
+   position: fixed;
    right: 0px;
+   margin-right: 15px;
+ }
+/* bouton inscription */
+ #inscription {
+   list-style-type: none;
+   position: fixed;
+   right: 0px;
+   margin-right: 105px;
  }
 
 /*css qui gére le menu sur les mobile*/
@@ -131,14 +139,28 @@ article {
   margin: 30px auto;
   display: block;
   padding: 8px;
-  background-color: white;
+  background-color: #f9f9f9;
 }
 footer{
   width: 100%;
   height: 130px;
   background-color: #2A2A2A;
   bottom: 0px;
+  position: relative;
 }
+
+/* lien page */
+#lien{
+  position: relative;
+  margin: auto 17px;
+}
+
+.lien{
+  text-align: center;
+  padding-top: 40px;
+}
+
+
 /*css pour sadapeté a l'écrant (mobile)*/
 @media screen and (min-width: 777px) {
   #li {
@@ -170,5 +192,8 @@ footer{
     color: gray;
     text-decoration: none;
     display: inline-block;
+  }
+  footer img{
+    display: none;
   }
 }
