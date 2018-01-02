@@ -55,8 +55,14 @@ header{
    position: fixed;
    right: 0px;
    margin-right: 15px;
-<<<<<<< HEAD
  }
+
+ /* bouton inscription */
+  #inscription {
+    list-style-type: none;
+    position: fixed;
+    right: 0px;
+    margin-right: 105px;
 
 /*css qui gére le menu sur les mobile*/
 #m-nav-menu{
@@ -364,4 +370,3 @@ footer{
     display: inline-block;
   }
 }
->>>>>>> before discard
