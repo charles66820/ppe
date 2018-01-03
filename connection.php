@@ -88,7 +88,7 @@ if (isset($_SESSION['id'])) {
          <a href="club.html">Club</a>
          <?php
          if (isset($_SESSION['id'])) {
-           echo '<a id="inscription" href="assets/php/deconnection.php" style="border-bottom-color: rgb(0, 150, 255);">deconnection</a>';
+           echo '<a id="inscription" href="deconnection.php" style="border-bottom-color: rgb(0, 150, 255);">deconnection</a>';
          }else {
           echo '<a id="connexion" href="connection.php">Connexion</a>';
          }
@@ -123,6 +123,19 @@ if (isset($_SESSION['id'])) {
      <article>
        <?php
        if (isset($_SESSION['id'])) {
+         echo '<div align="center">'+
+         '<h2>Connexion</h2>'+
+         '<br/><br/>'+
+         '<form method="POST" action="">'+
+         '<input type="email" name="mailconnect" placeholder="Mail" />'+
+         '<input type="password" name="mdpconnect" placeholder="Mot de passe" />'+
+         '<br/><br/>'+
+         '<input type="submit" name="formconnexion" value="Se connecter !" />'+
+         '</form>';
+         if(isset($erreur)) {
+           echo '<font color="red">'.$erreur."</font>";
+         }
+       }else {
          echo '<div align="center">
             <h2>Inscription</h2>
             <br /><br />
@@ -187,19 +200,6 @@ if (isset($_SESSION['id'])) {
                echo '<font color="red">'.$erreur."</font>";
             }
          echo '</div>';
-       }else {
-         echo '<div align="center">
-         <h2>Connexion</h2>
-         <br/><br/>
-         <form method="POST" action="">
-         <input type="email" name="mailconnect" placeholder="Mail" />
-         <input type="password" name="mdpconnect" placeholder="Mot de passe" />
-         <br/><br/>
-         <input type="submit" name="formconnexion" value="Se connecter !" />
-         </form>';
-         if(isset($erreur)) {
-           echo '<font color="red">'.$erreur."</font>";
-         }
        }
        ?>
       </div>
