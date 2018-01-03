@@ -179,33 +179,32 @@ if (isset($_SESSION['id'])) {
          <td>
          <input type="password" placeholder="Confirmez votre mdp" id="mdp2" name="mdp2" />
          </td>
-       </tr>
-       <tr>
+         </tr>
+         <tr>
          <td></td>
          <td align="center">
-           <br />
-           <input type="submit" name="forminscription" value="Valider" />
+         <br />
+         <input type="submit" name="forminscription" value="Valider" />
          </td>
-       </tr>
-     </table>
-   </form>';
-   if(isset($erreur)) {
-     echo '<font color="red">'.$erreur."</font>";
-   }
-   echo '</div>';
-
-       }else {
-         echo '<div align="center">'+
-         '<h2>Connexion</h2>'+
-         '<br/><br/>'+
-         '<form method="POST" action="">'+
-         '<input type="email" name="mailconnect" placeholder="Mail" />'+
-         '<input type="password" name="mdpconnect" placeholder="Mot de passe" />'+
-         '<br/><br/>'+
-         '<input type="submit" name="formconnexion" value="Se connecter !" />'+
-         '</form>';
+         </tr>
+         </table>
+         </form>';
          if(isset($erreur)) {
            echo '<font color="red">'.$erreur."</font>";
+         }
+         echo '</div>';
+      }else {
+         echo '<div align="center">
+         <h2>Connexion</h2>
+         <br/><br/>
+         <form method="POST" action="">
+         <input type="email" name="mailconnect" placeholder="Mail" />
+         <input type="password" name="mdpconnect" placeholder="Mot de passe" />
+         <br/><br/>
+         <input type="submit" name="formconnexion" value="Se connecter !" />
+         </form>';
+         if(isset($erreur)) {
+           echo '<font color="red">'.$erreur.'</font>';
          }
        }
        ?>
