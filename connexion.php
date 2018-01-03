@@ -90,7 +90,7 @@ if (isset($_SESSION['id'])) {
          if (isset($_SESSION['id'])) {
            echo '<a id="connexion" href="assets/php/deconnexion.php">deconnexion</a>';
          }else {
-          echo '<a id="connexion" href="connexion.php">Connexion</a>';
+          echo '<a id="connexion" href="connexion.php">Espace m\'embre</a>';
          }
          ?>
        </nav>
@@ -116,7 +116,7 @@ if (isset($_SESSION['id'])) {
            if (isset($_SESSION['id'])) {
              echo '<a id="connexion" href="assets/php/deconnexion.php">deconnexion</a>';
            }else {
-            echo '<a href="connexion.php">Connexion</a>';
+            echo '<a href="connexion.php">Espace m\'embre</a>';
            }
            ?>
            <a id="lien" href="http://www.escrime-ffe.fr/" target="_blank"><img src="assets/img/logo/logoFFe.png" height="45"></a>
