@@ -57,6 +57,8 @@ if (isset($_SESSION['id'])) {
         $_SESSION['id'] = $userinfo['id'];
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['mail'] = $userinfo['mail'];
+        $insertmbr2 = $bdd->prepare("INSERT INTO connectlogs(pseudo, mail, `date`, ip) VALUES (?, ?, ?, ?)");
+        $insertmbr2->execute(array($_SESSION['pseudo'], $_SESSION['mail'], date("Y-d-m H:i:s"), $_SERVER['REMOTE_ADDR']));
         header("Location: connexion.php?sid=".$_SESSION['id']);
       } else {
         $erreur = "Mauvais mail ou mot de passe !";
