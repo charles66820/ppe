@@ -88,7 +88,7 @@ if (isset($_SESSION['id'])) {
          <a href="club.html">Club</a>
          <?php
          if (isset($_SESSION['id'])) {
-           echo '<a id="inscription" href="assets/php/deconnection.php" style="border-bottom-color: rgb(0, 150, 255);">deconnection</a>';
+           echo '<a id="connexion" href="assets/php/deconnection.php" style="border-bottom-color: rgb(0, 150, 255);">deconnection</a>';
          }else {
           echo '<a id="connexion" href="connection.php">Connexion</a>';
          }
