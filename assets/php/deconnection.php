@@ -1,5 +1,5 @@
 <?php
 session_start();
 session_destroy();
-header("Location: ../../connection.php?sid=".$_SESSION['id']);
+header("Location: ../../connexion.php?sid=".$_SESSION['id']);
 ?>
