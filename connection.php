@@ -88,7 +88,7 @@ if (isset($_SESSION['id'])) {
          <a href="club.html">Club</a>
          <?php
          if (isset($_SESSION['id'])) {
-           echo '<a id="connexion" href="assets/php/deconnection.php" style="border-bottom-color: rgb(0, 150, 255);">deconnection</a>';
+           echo '<a id="connexion" href="assets/php/deconnection.php">deconnection</a>';
          }else {
           echo '<a id="connexion" href="connection.php">Connexion</a>';
          }
@@ -112,7 +112,13 @@ if (isset($_SESSION['id'])) {
            <a href="regles.html">Régles</a>
            <a href="champion.html">Champion</a>
            <a href="club.html">Club</a>
-           <a href="connection.php" >Connexion</a>
+           <?php
+           if (isset($_SESSION['id'])) {
+             echo '<a id="connexion" href="assets/php/deconnection.php">deconnection</a>';
+           }else {
+            echo '<a href="connection.php">Connexion</a>';
+           }
+           ?>
            <a id="lien" href="http://www.escrime-ffe.fr/" target="_blank"><img src="assets/img/logo/logoFFe.png" height="45"></a>
            <a id="lien" href="https://www.facebook.com/ffescrime/" target="_blank"><img src="assets/img/logo/facebooklogo.png" height="45"></a>
            <a id="lien" href="https://www.instagram.com/ffescrime/" target="_blank"><img src="assets/img/logo/instalogo.png" height="50"></a>
