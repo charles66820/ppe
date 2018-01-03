@@ -57,7 +57,7 @@ if (isset($_SESSION['id'])) {
         $_SESSION['id'] = $userinfo['id'];
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['mail'] = $userinfo['mail'];
-        header("Location: connection.php?sid=".$_SESSION['id']);
+        header("Location: connexion.php?sid=".$_SESSION['id']);
       } else {
         $erreur = "Mauvais mail ou mot de passe !";
       }
@@ -114,9 +114,9 @@ if (isset($_SESSION['id'])) {
            <a href="club.html">Club</a>
            <?php
            if (isset($_SESSION['id'])) {
-             echo '<a id="connexion" href="assets/php/deconnection.php">deconnection</a>';
+             echo '<a id="connexion" href="assets/php/deconnexion.php">deconnexion</a>';
            }else {
-            echo '<a href="connection.php">Connexion</a>';
+            echo '<a href="connexion.php">Connexion</a>';
            }
            ?>
            <a id="lien" href="http://www.escrime-ffe.fr/" target="_blank"><img src="assets/img/logo/logoFFe.png" height="45"></a>
