@@ -43,6 +43,28 @@
     </header>
     <article>
       <p>Les principaux club français</p>
+      <div id="box">
+        <div id="map"></div>
+        <div id="volet">
+          <div id="map-m-btn">
+            <!-- boutton pour ouvrir le menu de la map -->
+            <a id="map-line" href="#volet" >
+              <div class="mapline" style="left: 8px;"><div class="mapline"><div class="mapline"></div></div></div>
+            </a>
+            <!-- boutton pour fermmer le menu de la map-->
+            <a id="map-crois" href="#">
+              <div class="mapcrois" style="transform: rotate(45deg);"></div>
+              <div class="mapcrois" style="transform: rotate(-45deg);"></div>
+            </a>
+          </div>
+          <ol>
+            <li><a href="#m1" onclick="markerW(1)">Perpignan Roussillon Escrime</a></li>
+            <li><a href="#m2" onclick="markerW(2)">Ecole catalane de combat médiéval</a></li>
+            <li><button type="button" onclick=""></button></li>
+            <li><button type="button" onclick=""></button></li>
+          </ol>
+        </div>
+      </div>
     </article>
     <footer style="position: fixed">
       <div class="lien">
@@ -61,5 +83,130 @@
       document.body.style.overflow = "inherit";
     }
     </script>
+    <script>
+      var map;
+      var infocontent;
+      var myLatlng = {lat: 46.4, lng: 2.35};
+      var zoom = 5;
+      var infowindow1;
+      var marker1, marker2, marker3, marker4, marker5, marker6, marker7;
+      function initMap() {
+        //crée la map
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatlng,
+          zoom: zoom,
+          mapTypeControl: false,
+          zoomControl: true,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          scaleControl: false,
+          streetViewControl: false,
+          fullscreenControl: false
+        });
+
+        var t;
+        document.getElementById("map").onmousemove = function() {
+          clearTimeout(t);
+          t = setTimeout(function(){
+            map.panTo(myLatlng);
+            map.setZoom(zoom);
+          }, 3000);
+        }
+
+        //création des markers
+        marker1 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.6865848, lng: 2.8729275},
+          title: 'Perpignan Roussillon Escrime'
+        });
+        marker2 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.768546, lng: 2.6524417},
+          title: 'Ecole catalane de combat médiéval'
+        });
+        marker3 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.5472992, lng: 3.0216738},
+          title: 'Société d\'escrime Argelésienne'
+        });
+        marker4 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.5654607, lng: 3.003717},
+          title: 'Société d\'escrime Argelésienne'
+        });
+        marker5 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.6698731, lng: 2.6180772},
+          title: '2kpdp 66'
+        });
+        marker6 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.4860287, lng: 2.7493735},
+          title: 'Escrime Club De Ceret'
+        });
+        marker7 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.6197178, lng: 2.4293444},
+          title: '2kpdp 66'
+        });
+
+        //création des funétre d'info sur la map de chaque markers
+        infowindow1 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Perpignan Roussillon Escrime</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : 55, Rue Mathieu de Dombasle - 66000 - PERPIGNAN</p>'+
+              '<p>Téléphone : 0468555170</p> <p>Email : <a href="mailto:richard.gely@gmail.com">richard.gely@gmail.com</a></p>'+
+              '<p>Site Web : <a href="http://pre66.jimdo.com/">http://pre66.jimdo.com/</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow2 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Psdqdme</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : 5dqsdqsdqsdqsdqsd dq sdqsd NAN</p>'+
+              '<p>Téléphone : 0468555170</p> <p>Email : <a href="mailto:richard.gely@gmail.com">richard.gskdjq dqs,d@fjsd,</a></p>'+
+              '<p>Site Web : <a href="http://pre66.jimdo.com/">http://pre66sdsdo.com/</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+
+//10 Rue Enric Casassas, 66500 Prades, France
+        //pour rendre les markers cliquable
+        marker1.addListener('click', function() {
+          markerW(1);
+        });
+        marker2.addListener('click', function() {
+          markerW(2);
+        });
+      }
+
+      //pour ouvrire les feunétre d'info
+      function markerW(n){
+        map.setZoom(8);
+        zoom = 8;
+        switch (n) {
+          case 1:
+            infowindow1.open(map, marker1);
+            break;
+          case 2:
+            infowindow2.open(map, marker2);
+            break;
+          default:
+          console.log("aucun numéro de marker selectionnée");
+        }
+        setTimeout(function () {
+          myLatlng = map.getCenter().toJSON();
+        }, 1000);
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1aGMgaBh4FaqCe5i-T9YvYwCEh9O0R_c&callback=initMap"async defer></script>
   </body>
 </html>
