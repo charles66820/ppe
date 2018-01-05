@@ -31,23 +31,23 @@ p {
 
 /* Menu nav */
 @media screen and (min-width: 777px) {
-#menu{
-  z-index: 2;
-  display: table;
-  position: fixed;
-  background-color: #2A2A2A;
-  top: 60px;
-  box-shadow: 0 5px 15px 0 rgba(0,0,0,0.50);
-  padding-right: 25px;
+  #menu{
+    z-index: 2;
+    display: table;
+    position: fixed;
+    background-color: #2A2A2A;
+    top: 60px;
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.50);
+    padding-right: 25px;
 
-}
+  }
 
-#menu a {
-  color: white;
-  text-decoration: none;
-}
+  #menu a {
+    color: white;
+    text-decoration: none;
+  }
 
-#menu li{
-  color: white;
-}
+  #menu li{
+    color: white;
+  }
 }

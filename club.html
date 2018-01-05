@@ -43,6 +43,31 @@
     </header>
     <article>
       <p>Les principaux club français</p>
+      <div id="box">
+        <div id="map"></div>
+        <div id="volet">
+          <div id="map-m-btn">
+            <!-- boutton pour ouvrir le menu de la map -->
+            <a id="map-line" href="#volet" >
+              <div class="mapline" style="left: 8px;"><div class="mapline"><div class="mapline"></div></div></div>
+            </a>
+            <!-- boutton pour fermmer le menu de la map-->
+            <a id="map-crois" href="#">
+              <div class="mapcrois" style="transform: rotate(45deg);"></div>
+              <div class="mapcrois" style="transform: rotate(-45deg);"></div>
+            </a>
+          </div>
+          <ol>
+            <li><a href="#m1" onclick="markerW(1)">Perpignan Roussillon Escrime</a></li>
+            <li><a href="#m2" onclick="markerW(2)">Ecole catalane de combat médiéval</a></li>
+            <li><a href="#m2" onclick="markerW(3)">Société d\'escrime Argelésienne</a></li>
+            <li><a href="#m2" onclick="markerW(4)">Société d\'escrime Argelésienne</a></li>
+            <li><a href="#m2" onclick="markerW(5)">2kpdp 66(ille-sur-tet)</a></li>
+            <li><a href="#m2" onclick="markerW(6)">Escrime Club De Ceret</a></li>
+            <li><a href="#m2" onclick="markerW(7)">2kpdp 66(prades)</a></li>
+          </ol>
+        </div>
+      </div>
     </article>
     <footer style="position: fixed">
       <div class="lien">
@@ -61,5 +86,226 @@
       document.body.style.overflow = "inherit";
     }
     </script>
+    <script>
+      var map;
+      var infocontent;
+      var myLatlng = {lat: 46.4, lng: 2.35};
+      var zoom = 5;
+      var infowindow1;
+      var marker1, marker2, marker3, marker4, marker5, marker6, marker7;
+      function initMap() {
+        //crée la map
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: myLatlng,
+          zoom: zoom,
+          mapTypeControl: false,
+          zoomControl: true,
+          zoomControlOptions: {
+            position: google.maps.ControlPosition.LEFT_CENTER
+          },
+          scaleControl: false,
+          streetViewControl: false,
+          fullscreenControl: false
+        });
+
+        var t;
+        document.getElementById("map").onmousemove = function() {
+          clearTimeout(t);
+          t = setTimeout(function(){
+            map.panTo(myLatlng);
+            map.setZoom(zoom);
+          }, 3000);
+        }
+
+        //création des markers
+        marker1 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.6865848, lng: 2.8729275},
+          title: 'Perpignan Roussillon Escrime'
+        });
+        marker2 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.768546, lng: 2.6524417},
+          title: 'Ecole catalane de combat médiéval'
+        });
+        marker3 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.5472992, lng: 3.0216738},
+          title: 'Société d\'escrime Argelésienne'
+        });
+        marker4 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.5654607, lng: 3.003717},
+          title: 'Société d\'escrime Argelésienne'
+        });
+        marker5 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.6698731, lng: 2.6180772},
+          title: '2kpdp 66'
+        });
+        marker6 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.4860287, lng: 2.7493735},
+          title: 'Escrime Club De Ceret'
+        });
+        marker7 = new google.maps.Marker({
+          map: map,
+          position: {lat: 42.6197178, lng: 2.4293444},
+          title: '2kpdp 66'
+        });
+
+        //création des funétre d'info sur la map de chaque markers
+        infowindow1 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Perpignan Roussillon Escrime</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : 55, Rue Mathieu de Dombasle - 66000 - PERPIGNAN</p>'+
+              '<p>Téléphone : 0468555170</p>'+
+              '<p>Email : <a href="mailto:richard.gely@gmail.com">richard.gely@gmail.com</a></p>'+
+              '<p>Site Web : <a href="http://pre66.jimdo.com/">http://pre66.jimdo.com/</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow2 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Ecole catalane de combat médiéval</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : Avenue Guy Malé - 66720 - LATOUR DE FRANCE</p>'+
+              '<p>Téléphone : 0648516856</p>'+
+              '<p>Email : <a href="mailto:16016@escrime-ffe.fr">16016@escrime-ffe.fr</a></p>'+
+              '<p>Site Web : <a href=""></a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow3 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Société d\'escrime Argelésienne</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : Salle du Colonel PELOU 71 rue de la Paix - 66700 - ARGELES SUR MER</p>'+
+              '<p>Téléphone : 0468812873</p>'+
+              '<p>Email : <a href="mailto:escrime-argelesienne66@orange.fr">escrime-argelesienne66@orange.fr</a></p>'+
+              '<p>Site Web : <a href="http://www.escrimeargeles.fr">http://www.escrimeargeles.fr</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow4 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Société d\'escrime Argelésienne</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : Gymnase du Lycée rue Nelson Mandela Jeudi soir - 66700 - ARGELES SUR MER</p>'+
+              '<p>Téléphone : 0637474526</p>'+
+              '<p>Email : <a href="mailto:escrime-argelesienne66@orange.fr">escrime-argelesienne66@orange.fr</a></p>'+
+              '<p>Site Web : <a href="http://www.escrimeargeles.fr">http://www.escrimeargeles.fr</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow5 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">2kpdp 66(ille-sur-tet)</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : Adresse Ecole Langevin - 66130 - ILLE SUR TET</p>'+
+              '<p>Téléphone : 0625296523</p>'+
+              '<p>Email : <a href="mailto:alcuxa@yahoo.fr">alcuxa@yahoo.fr</a></p>'+
+              '<p>Site Web : <a href="http://2kpdp66.skyrock.com">2kpdp66.skyrock.com</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow6 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">Escrime Club De Ceret</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : Gymnase Ecole Primaire Centre Vi Avenue Jules Ferry - 66400 - CERET</p>'+
+              '<p>Téléphone : 0614226605</p>'+
+              '<p>Email : <a href="mailto:16021@escrime-ffe.fr">16021@escrime-ffe.fr</a></p>'+
+              '<p>Site Web : <a href=""></a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+        infowindow7 = new google.maps.InfoWindow({
+          content :
+          '<div class="mapContent">'+
+            '<h4 class="mapTitle">2kpdp 66(prades)</h4>'+
+            '<div class="mapBody">'+
+              '<p>Salle d\'arme : 10 Rue Enric Casassas, 66500 Prades</p>'+
+              '<p>Téléphone : 0625296523</p>'+
+              '<p>Email : <a href="mailto:alcuxa@yahoo.fr">alcuxa@yahoo.fr</a></p>'+
+              '<p>Site Web : <a href="http://2kpdp66.skyrock.com">2kpdp66.skyrock.com</a></p>'+
+            '</div>'+
+          '</div>',
+          maxWidth : 230
+        });
+
+        //pour rendre les markers cliquable
+        marker1.addListener('click', function() {
+          markerW(1);
+        });
+        marker2.addListener('click', function() {
+          markerW(2);
+        });
+        marker3.addListener('click', function() {
+          markerW(3);
+        });
+        marker4.addListener('click', function() {
+          markerW(4);
+        });
+        marker5.addListener('click', function() {
+          markerW(5);
+        });
+        marker6.addListener('click', function() {
+          markerW(6);
+        });
+        marker7.addListener('click', function() {
+          markerW(7);
+        });
+      }
+
+      //pour ouvrire les feunétre d'info
+      function markerW(n){
+        map.setZoom(8);
+        zoom = 8;
+        switch (n) {
+          case 1:
+            infowindow1.open(map, marker1);
+            break;
+          case 2:
+            infowindow2.open(map, marker2);
+            break;
+          case 3:
+            infowindow3.open(map, marker3);
+            break;
+          case 4:
+            infowindow4.open(map, marker4);
+            break;
+          case 5:
+            infowindow5.open(map, marker5);
+            break;
+          case 6:
+            infowindow6.open(map, marker6);
+            break;
+          case 7:
+            infowindow7.open(map, marker7);
+            break;
+          default:
+          console.log("aucun numéro de marker selectionnée");
+        }
+        setTimeout(function () {
+          myLatlng = map.getCenter().toJSON();
+        }, 1000);
+      }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1aGMgaBh4FaqCe5i-T9YvYwCEh9O0R_c&callback=initMap"async defer></script>
   </body>
 </html>

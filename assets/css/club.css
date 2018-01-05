@@ -1,0 +1,93 @@
+#box{
+  height: 370px;
+  position: relative;
+  margin: auto;
+  display: flex;
+}
+#map{
+  height: 370px;
+  width: 350px;
+}
+.mapline{
+  top: 12.5px;
+  width: 37px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+}
+.mapcrois{
+  top: 23px;
+  left: 6px;
+  width: 37px;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+}
+#map-line{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: white;
+  border-radius: 8px 0px 0px 8px;
+}
+#map-crois{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  display: none;
+  background-color: white;
+  border-radius: 8px 0px 0px 8px;
+}
+#volet:target #map-line{
+  display: none;
+}
+#volet:target #map-crois{
+  display: inherit;
+}
+#volet:target {
+  right: 0px;
+}
+#volet ol{
+  margin: 0px;
+  padding-top: 10px;
+  background-color: white;
+  min-height: 360px;
+}
+@media screen and (min-width: 777px) {
+  #box{
+    width: 700px;
+  }
+  #map-m-btn{
+    display: none;
+  }
+  #volet{
+    height: 370px;
+    width: 350px;
+    right: 0px;
+    position: absolute;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 777px) {
+  #box{
+    width: 350px;
+    overflow: hidden;
+  }
+  #volet{
+    height: 370px;
+    width: 300px;
+    padding-left: 50px;
+    right: -300px;
+    position: absolute;
+    overflow-y: auto;
+    -webkit-transition: right .5s ease-in;
+    -moz-transition: right .5s ease-in;
+    transition: right .5s ease-in;
+  }
+  #map-m-btn{
+    left: 0px;
+    position: absolute;
+    display: block;
+  }
+}
