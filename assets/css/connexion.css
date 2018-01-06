@@ -1,0 +1,48 @@
+.conn{
+  margin: 120px auto;
+}
+#inscription{
+  float: left;
+}
+#loginLog{
+  float: left;
+  margin: 70px auto 0px auto;
+}
+table{
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.12),
+                      0 1px 2px 0 rgba(0,0,0,.24);
+  -moz-box-shadow:    0 1px 3px 0 rgba(0,0,0,.12),
+                      0 1px 2px 0 rgba(0,0,0,.24);
+  box-shadow:         0 1px 3px 0 rgba(0,0,0,.12),
+                      0 1px 2px 0 rgba(0,0,0,.24);
+}
+#loginLog table, #loginLog tr, #loginLog td {
+  border-top: 1px solid rgba(0,0,0,.12);
+  border-collapse: collapse;
+}
+@media screen and (min-width: 777px) {
+  article{
+    display: flex;
+  }
+  #inscription{
+    width: 60%;
+  }
+  #loginLog{
+    width: 40%;
+  }
+}
+
+@media (max-width: 777px) {
+  article{
+    display: grid;
+  }
+  #inscription{
+    width: 100%;
+  }
+  #loginLog{
+    width: 100%;
+  }
+  #loginLog table{
+    margin: auto;
+  }
+}

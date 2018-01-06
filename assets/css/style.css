@@ -56,14 +56,7 @@ header{
    right: 0px;
    margin-right: 15px;
  }
-
- /* bouton inscription */
-#inscription {
-    list-style-type: none;
-    position: fixed;
-    right: 0px;
-    margin-right: 105px;
-}
+ 
 /*css qui gére le menu sur les mobile*/
 #m-nav-menu{
   height: 100%;
@@ -160,7 +153,6 @@ footer{
   text-align: center;
   padding-top: 40px;
 }
-
 
 /*css pour sadapeté a l'écrant (mobile)*/
 @media screen and (min-width: 777px) {

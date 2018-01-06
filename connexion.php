@@ -57,8 +57,8 @@ if (isset($_SESSION['id'])) {
         $_SESSION['id'] = $userinfo['id'];
         $_SESSION['pseudo'] = $userinfo['pseudo'];
         $_SESSION['mail'] = $userinfo['mail'];
-        $insertmbr2 = $bdd->prepare("INSERT INTO connectlogs(pseudo, mail, `date`, ip) VALUES (?, ?, ?, ?)");
-        $insertmbr2->execute(array($_SESSION['pseudo'], $_SESSION['mail'], date("Y-d-m H:i:s"), $_SERVER['REMOTE_ADDR']));
+        $insertlog = $bdd->prepare("INSERT INTO connectlogs(pseudo, mail, `date`, ip) VALUES (?, ?, ?, ?)");
+        $insertlog->execute(array($_SESSION['pseudo'], $_SESSION['mail'], date("Y-d-m H:i:s"), $_SERVER['REMOTE_ADDR']));
         header("Location: connexion.php?sid=".$_SESSION['id']);
       } else {
         $erreur = "Mauvais mail ou mot de passe !";
@@ -77,7 +77,7 @@ if (isset($_SESSION['id'])) {
     <meta charset="utf-8">
     <title>Inscription</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/accueil.css">
+    <link rel="stylesheet" href="assets/css/connexion.css">
   </head>
   <body>
     <header>
@@ -131,9 +131,8 @@ if (isset($_SESSION['id'])) {
      <article>
        <?php
        if (isset($_SESSION['id'])) {
-         echo '<div align="center">
+         echo '<div id="inscription" align="center">
          <h2>Inscription</h2>
-         <br /><br />
          <form method="POST" action="">
          <table>
          <tr>
@@ -195,8 +194,28 @@ if (isset($_SESSION['id'])) {
            echo '<font color="red">'.$erreur."</font>";
          }
          echo '</div>';
+
+         echo '<div id="loginLog">
+         <table>
+         <tr>
+         <td>pseudo</td>
+         <td>mail</td>
+         <td>date</td>
+         <td>ip</td>
+         </tr>';
+         foreach ($bdd->query("SELECT * FROM connectlogs") as $row) {
+           echo "<tr>";
+           echo '<td>'.$row["pseudo"].'</td>';
+           echo '<td>'.$row["mail"].'</td>';
+           echo '<td>'.$row["date"].'</td>';
+           echo '<td>'.$row["ip"].'</td>';
+           echo "</tr>";
+         }
+         echo '</table>
+         </div>';
+
       }else {
-         echo '<div align="center">
+         echo '<div class="conn" align="center">
          <h2>Connexion</h2>
          <br/><br/>
          <form method="POST" action="">
@@ -209,11 +228,11 @@ if (isset($_SESSION['id'])) {
            echo '<font color="red">'.$erreur.'</font>';
          }
        }
+       echo '</div>';
        ?>
-      </div>
     </article>
    </body>
-   <footer style="position: fixed">
+   <footer>
      <div class="lien">
        <a id="lien" href="http://www.escrime-ffe.fr/" target="_blank"><img src="assets/img/logo/logoFFe.png" height="45"></a>
        <a id="lien" href="https://www.facebook.com/ffescrime/" target="_blank"><img src="assets/img/logo/facebooklogo.png" height="45"></a>

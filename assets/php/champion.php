@@ -1,10 +1,10 @@
 <?php
 // connection a la base d donnée
-include 'sql_settings.php';
+$bdd = new PDO('mysql:host=127.0.0.1;dbname=webdata', 'root', '');
 
 //test si la connexion fonctionne
-if (!$conn){
-  die("connection à la db a échouer : ".mysqli_connect_error());
+if (!$bdd){
+  die("connection à la db a échouer");
 } else {
 
   //variable
@@ -42,8 +42,7 @@ if (!$conn){
   }
 
   //lecture de la taple est création du tableau
-  $result = mysqli_query($conn, $sql);
-  while ($row = mysqli_fetch_assoc($result)){
+  foreach ($bdd->query($sql) as $row) {
     echo '<tr>
     <td>'.$row["nom"].'</td><td>'.$row["nationaliter"].'</td><td>'.$row["titre"].'</td><td>'.$row["edition"].'</td><td>'.$row["type"].'</td>
     </tr>';
