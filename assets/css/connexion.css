@@ -6,9 +6,19 @@
 }
 #loginLog{
   float: left;
-  margin: 70px auto 0px auto;
 }
-table{
+#addchamp{
+  margin: auto;
+}
+#addchamp h2{
+  margin-top: 40px;
+  display: inline-block;
+}
+form div , form font{
+  margin: 6px;
+  display: inline-block;
+}
+.shadow{
   -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.12),
                       0 1px 2px 0 rgba(0,0,0,.24);
   -moz-box-shadow:    0 1px 3px 0 rgba(0,0,0,.12),
@@ -22,7 +32,7 @@ table{
 }
 @media screen and (min-width: 777px) {
   article{
-    display: flex;
+    display: block;
   }
   #inscription{
     width: 60%;

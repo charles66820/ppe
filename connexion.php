@@ -44,6 +44,25 @@ if (isset($_SESSION['id'])) {
         $erreur = "Tous les champs doivent être complétés !";
      }
   }
+
+  //ajouter un champion
+  if(isset($_POST['formAddChamp'])) {
+    //mettre les valeur dans des variable
+    $nomAddChamp = htmlspecialchars($_POST['nomAddChamp']);
+    $nationaliterAddChamp = htmlspecialchars($_POST['nationaliterAddChamp']);
+    $titreAddChamp = htmlspecialchars($_POST['titreAddChamp']);
+    $editionAddChamp = htmlspecialchars($_POST['editionAddChamp']);
+    $typeAddChamp = htmlspecialchars($_POST['typeAddChamp']);
+
+    //test si tous les chanps sont complétés
+    if(!empty($nomAddChamp) AND !empty($nationaliterAddChamp) AND !empty($titreAddChamp) AND !empty($editionAddChamp) AND !empty($typeAddChamp)) {
+      $insertChamp = $bdd->prepare("INSERT INTO champions(nom, nationaliter, titre, edition, type) VALUES (?, ?, ?, ?, ?)");
+      $insertChamp->execute(array($nomAddChamp, $nationaliterAddChamp, $titreAddChamp, $editionAddChamp, $typeAddChamp));
+      header("Location: connexion.php");
+    } else {
+      $erreurChamp = "Tous les champs doivent être complétés !";
+    }
+  }
 }else {
   if(isset($_POST['formconnexion'])) {
     $mailconnect = htmlspecialchars($_POST['mailconnect']);
@@ -134,7 +153,7 @@ if (isset($_SESSION['id'])) {
          echo '<div id="inscription" align="center">
          <h2>Inscription</h2>
          <form method="POST" action="">
-         <table>
+         <table class="shadow">
          <tr>
          <td align="right">
          <label for="pseudo">Pseudo :</label>
@@ -195,8 +214,9 @@ if (isset($_SESSION['id'])) {
          }
          echo '</div>';
 
-         echo '<div id="loginLog">
-         <table>
+         echo '<div id="loginLog" align="center">
+         <h2>Historique de connexion</h2>
+         <table class="shadow">
          <tr>
          <td>pseudo</td>
          <td>mail</td>
@@ -215,21 +235,45 @@ if (isset($_SESSION['id'])) {
          </div>';
 
       }else {
-         echo '<div class="conn" align="center">
-         <h2>Connexion</h2>
-         <br/><br/>
-         <form method="POST" action="">
-         <input type="email" name="mailconnect" placeholder="Mail" />
-         <input type="password" name="mdpconnect" placeholder="Mot de passe" />
-         <br/><br/>
-         <input type="submit" name="formconnexion" value="Se connecter !" />
-         </form>';
-         if(isset($erreur)) {
-           echo '<font color="red">'.$erreur.'</font>';
-         }
-       }
-       echo '</div>';
-       ?>
+        echo '<div class="conn" align="center">
+        <h2>Connexion</h2>
+        <br/><br/>
+        <form method="POST" action="">
+        <input type="email" name="mailconnect" placeholder="Mail" />
+        <input type="password" name="mdpconnect" placeholder="Mot de passe" />
+        <br/><br/>
+        <input type="submit" name="formconnexion" value="Se connecter !" />
+        </form>';
+        if(isset($erreur)) {
+          echo '<font color="red">'.$erreur.'</font>';
+        }
+      }
+      echo '</div>';
+      ?>
+      <div id="addchamp" align="center">
+        <h2>ajouter un champion</h2>
+        <div class="shadow">
+          <form method="POST">
+            <div>
+              <input type="text" name="nomAddChamp" placeholder="nom du Champion(ne)" />
+              <input type="text" name="nationaliterAddChamp" placeholder="nationaliter" />
+              <select name="titreAddChamp">
+                <option value="Or">Or</option>
+                <option value="Bronze">Bronze</option>
+                <option value="Argent">Argent</option>
+              </select>
+              <input type="text" name="editionAddChamp" placeholder="nationaliter" />
+              <input type="text" name="typeAddChamp" placeholder="nationaliter" />
+              <input type="submit" name="formAddChamp" value="Ajouter" />
+            </div>
+            <?php
+            if(isset($erreurChamp)) {
+              echo '<font color="red">'.$erreurChamp."</font>";
+            }
+            ?>
+          </form>
+        </div>
+      </div>
     </article>
    </body>
    <footer>
