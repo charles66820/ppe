@@ -6,17 +6,24 @@
 }
 #loginLog{
   float: left;
+  overflow: auto;
+  height: 260px;
 }
 #addchamp{
   margin: auto;
+  display: table;
 }
 #addchamp h2{
   margin-top: 40px;
   display: inline-block;
 }
-form div , form font{
+form div{
   margin: 6px;
   display: inline-block;
+}
+form font{
+  display: grid;
+  margin: 6px;
 }
 .shadow{
   -webkit-box-shadow: 0 1px 3px 0 rgba(0,0,0,.12),

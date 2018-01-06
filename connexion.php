@@ -234,6 +234,29 @@ if (isset($_SESSION['id'])) {
          echo '</table>
          </div>';
 
+         echo '<div id="addchamp" align="center">
+         <h2>ajouter un champion</h2>
+         <div class="shadow">
+         <form method="POST">
+         <div>
+         <input type="text" name="nomAddChamp" placeholder="nom du Champion(ne)" />
+         <input type="text" name="nationaliterAddChamp" placeholder="nationaliter" />
+         <select name="titreAddChamp">
+         <option value="Or">Or</option>
+         <option value="Bronze">Bronze</option>
+         <option value="Argent">Argent</option>
+         </select>
+         <input type="text" name="editionAddChamp" placeholder="nationaliter" />
+         <input type="text" name="typeAddChamp" placeholder="nationaliter" />
+         <input type="submit" name="formAddChamp" value="Ajouter" />
+         </div>';
+         if(isset($erreurChamp)) {
+           echo '<font color="red">'.$erreurChamp."</font>";
+         }
+         echo '</form>
+         </div>
+         </div>';
+         
       }else {
         echo '<div class="conn" align="center">
         <h2>Connexion</h2>
@@ -250,30 +273,6 @@ if (isset($_SESSION['id'])) {
       }
       echo '</div>';
       ?>
-      <div id="addchamp" align="center">
-        <h2>ajouter un champion</h2>
-        <div class="shadow">
-          <form method="POST">
-            <div>
-              <input type="text" name="nomAddChamp" placeholder="nom du Champion(ne)" />
-              <input type="text" name="nationaliterAddChamp" placeholder="nationaliter" />
-              <select name="titreAddChamp">
-                <option value="Or">Or</option>
-                <option value="Bronze">Bronze</option>
-                <option value="Argent">Argent</option>
-              </select>
-              <input type="text" name="editionAddChamp" placeholder="nationaliter" />
-              <input type="text" name="typeAddChamp" placeholder="nationaliter" />
-              <input type="submit" name="formAddChamp" value="Ajouter" />
-            </div>
-            <?php
-            if(isset($erreurChamp)) {
-              echo '<font color="red">'.$erreurChamp."</font>";
-            }
-            ?>
-          </form>
-        </div>
-      </div>
     </article>
    </body>
    <footer>
