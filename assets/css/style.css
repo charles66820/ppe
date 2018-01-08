@@ -56,7 +56,7 @@ header{
    right: 0px;
    margin-right: 15px;
  }
- 
+
 /*css qui gére le menu sur les mobile*/
 #m-nav-menu{
   height: 100%;
@@ -178,15 +178,6 @@ footer{
 
 @media (max-width: 777px) {
   #li {
-    display: none;
-  }
-  footer a{
-    margin: 40px;
-    color: gray;
-    text-decoration: none;
-    display: inline-block;
-  }
-  footer img{
     display: none;
   }
 }

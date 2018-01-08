@@ -140,10 +140,6 @@ if (isset($_SESSION['id'])) {
             echo '<a href="connexion.php">Espace membre</a>';
            }
            ?>
-           <a id="lien" href="http://www.escrime-ffe.fr/" target="_blank"><img src="assets/img/logo/logoFFe.png" height="45"></a>
-           <a id="lien" href="https://www.facebook.com/ffescrime/" target="_blank"><img src="assets/img/logo/facebooklogo.png" height="45"></a>
-           <a id="lien" href="https://www.instagram.com/ffescrime/" target="_blank"><img src="assets/img/logo/instalogo.png" height="50"></a>
-           <a id="lien" href="https://twitter.com/ffescrime/" target="_blank"><img src="assets/img/logo/twlogo.png" height="45"></a>
          </nav>
        </div>
      </header>
@@ -256,7 +252,7 @@ if (isset($_SESSION['id'])) {
          echo '</form>
          </div>
          </div>';
-         
+
       }else {
         echo '<div class="conn" align="center">
         <h2>Connexion</h2>
