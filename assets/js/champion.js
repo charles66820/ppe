@@ -5,33 +5,6 @@ var limit = 20;
 //premier chargement
 $("#table").load("assets/php/champion.php");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //quant on clique sur la colonne nom
 $("#nom").click(function() {
   if ($(this).children().text() == ">") {
