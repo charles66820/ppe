@@ -99,36 +99,19 @@ if (isset($_SESSION['id'])) {
     <link rel="stylesheet" href="assets/css/connexion.css">
   </head>
   <body>
-    <header>
-       <!-- menu -->
-       <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
-       <nav id="li">
-         <a href="./">Acceuil</a>
-         <a href="regles.html">Régles</a>
-         <a href="champion.html">Champion</a>
-         <a href="club.html">Club</a>
-         <?php
-         if (isset($_SESSION['id'])) {
-           echo '<a id="connexion" href="assets/php/deconnexion.php">deconnexion</a>';
-         }else {
-          echo '<a id="connexion" href="connexion.php">Espace membre</a>';
-         }
-         ?>
-       </nav>
-       <div id="m-btn">
-         <div id="m-btn-t">
-           <!-- boutton pour ouvrir le menu -->
-           <a id="line" href="#m-btn" >
-             <div class="line" style="left: 8px;"><div class="line"><div class="line"></div></div></div>
-           </a>
-           <!-- boutton pour fermmer le menu -->
-           <a id="crois" href="#m-btn-t">
-             <div class="crois" style="transform: rotate(45deg);"></div>
-             <div class="crois" style="transform: rotate(-45deg);"></div>
-           </a>
-         </div>
-         <!-- menu pour les mobile -->
-         <nav id="m-nav-menu">
+    <header style="top:0">
+      <div style="color: #0c5460;background-color: #d1ecf1;border-color: #bee5eb;position: relative;padding: .75rem 1.25rem;border: 1px solid transparent;border-radius: .25rem;">
+        <p>Ce site web est un faux le site réalisé en (Projet Personnel Encadrée) lors du BTS (Services Informatiques aux Organisations).</p>
+        <hr style="border-top-color: #abdde5;margin-top: 1rem;margin-bottom: 1rem;border: 0;border-top: 1px solid rgba(0,0,0,.1);box-sizing: content-box;height: 0;overflow: visible;">
+        <p>This website is a fake site made during the PPE (Framed Personal project) in BTS SIO (Higher Technician Certificate - IT Service to Organizations).</p>
+        <button onclick="this.parentElement.parentElement.removeChild(this.parentElement)" style="float: right;font-size: 1.5rem;font-weight: 700;line-height: 1;text-shadow: 0 1px 0 #fff;opacity: .5;background-color: transparent;border: 0;-webkit-appearance: none;position: absolute;top: 0;right: 0;padding: .75rem 1.25rem;color: inherit;cursor: pointer;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <header style="top:auto">
+         <!-- menu -->
+         <a id="logo" href="./"><img src="assets/img/logo.png" height="60"></a>
+         <nav id="li">
            <a href="./">Acceuil</a>
            <a href="regles.html">Régles</a>
            <a href="champion.html">Champion</a>
@@ -137,11 +120,38 @@ if (isset($_SESSION['id'])) {
            if (isset($_SESSION['id'])) {
              echo '<a id="connexion" href="assets/php/deconnexion.php">deconnexion</a>';
            }else {
-            echo '<a href="connexion.php">Espace membre</a>';
+            echo '<a id="connexion" href="connexion.php">Espace membre</a>';
            }
            ?>
          </nav>
-       </div>
+         <div id="m-btn">
+           <div id="m-btn-t">
+             <!-- boutton pour ouvrir le menu -->
+             <a id="line" href="#m-btn" >
+               <div class="line" style="left: 8px;"><div class="line"><div class="line"></div></div></div>
+             </a>
+             <!-- boutton pour fermmer le menu -->
+             <a id="crois" href="#m-btn-t">
+               <div class="crois" style="transform: rotate(45deg);"></div>
+               <div class="crois" style="transform: rotate(-45deg);"></div>
+             </a>
+           </div>
+           <!-- menu pour les mobile -->
+           <nav id="m-nav-menu">
+             <a href="./">Acceuil</a>
+             <a href="regles.html">Régles</a>
+             <a href="champion.html">Champion</a>
+             <a href="club.html">Club</a>
+             <?php
+             if (isset($_SESSION['id'])) {
+               echo '<a id="connexion" href="assets/php/deconnexion.php">deconnexion</a>';
+             }else {
+              echo '<a href="connexion.php">Espace membre</a>';
+             }
+             ?>
+           </nav>
+         </div>
+       </header>
      </header>
      <article>
        <?php
